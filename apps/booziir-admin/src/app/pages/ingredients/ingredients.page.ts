@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '@booziir/shared-components';
+import { faPlus } from '@fortawesome/pro-light-svg-icons';
 
 @Component({
   selector: 'booziir-ingredients',
@@ -9,6 +10,7 @@ import { LanguageService } from '@booziir/shared-components';
   styleUrls: ['./ingredients.page.scss'],
 })
 export class IngredientsPage implements OnInit {
+  faPlus = faPlus;
 
   params: Params;
 
@@ -16,7 +18,7 @@ export class IngredientsPage implements OnInit {
     private route: ActivatedRoute,
     private readonly translate: TranslateService,
     private readonly language: LanguageService
-    ) {
+  ) {
     translate.setDefaultLang('en');
     this.language.lang
       .subscribe((currLang: string) => this.translate.use(currLang));
