@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { i18nPath } from '@booziir/shared';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, i18nPath('cocktails'), '.json');
@@ -28,15 +29,16 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
+    FontAwesomeModule,
     TranslateModule.forChild({
       loader: {
-          provide: TranslateLoader,
-          useFactory: (createTranslateLoader),
-          deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
       },
       isolate: true
-  })
+    })
   ],
   declarations: [CocktailsPage]
 })
-export class CocktailsPageModule {}
+export class CocktailsPageModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '@booziir/shared-components';
+import { faGlassCitrus, faCocktail, faGlassChampagne, faGlassMartini, faGlassWhiskeyRocks, faWineGlass, faPlus, faPen } from '@fortawesome/pro-light-svg-icons';
 
 @Component({
   selector: 'booziir-cocktails',
@@ -9,6 +10,14 @@ import { LanguageService } from '@booziir/shared-components';
   styleUrls: ['./cocktails.page.scss'],
 })
 export class CocktailsPage implements OnInit {
+  faPlus = faPlus;
+  faPen = faPen;
+  faGlassCitrus = faGlassCitrus;
+  faCocktail = faCocktail;
+  faGlassChampagne = faGlassChampagne;
+  faGlassMartini = faGlassMartini;
+  faGlassWhiskeyRocks = faGlassWhiskeyRocks;
+  faWineGlass = faWineGlass;
 
   params: Params;
 
