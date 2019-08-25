@@ -13,6 +13,9 @@
     },
     "booziir-admin": {
       "tags": []
+    },
+    "shared-components": {
+      "tags": []
     }
   }
 }

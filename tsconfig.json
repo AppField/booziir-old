@@ -15,7 +15,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@booziir/shared": ["libs/shared/index.ts"],
+      "@booziir/shared-components": ["libs/shared-components/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

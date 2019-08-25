@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirePerformanceModule } from '@angular/fire/performance';
 import { CommonModule } from '@angular/common';
-
-
-// export function createTranslateLoader(http: HttpClient) {
-//     return new TranslateHttpLoader(http, i18nPath('app'), '.json');
-//   }
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     imports: [
         CommonModule,
-        HttpClientModule
+        AngularFireAuthModule,
+        AngularFirestoreModule.enablePersistence(),
+        AngularFirePerformanceModule
     ]
 })
 export class CoreModule { }
