@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '@booziir/shared-components';
-import { faPlus } from '@fortawesome/pro-light-svg-icons';
+import { faPlus, faWineBottle, faGlass } from '@fortawesome/pro-light-svg-icons';
 
 @Component({
   selector: 'booziir-ingredients',
@@ -11,6 +11,8 @@ import { faPlus } from '@fortawesome/pro-light-svg-icons';
 })
 export class IngredientsPage implements OnInit {
   faPlus = faPlus;
+  faWineBottle = faWineBottle;
+  faGlass = faGlass;
 
   params: Params;
 
