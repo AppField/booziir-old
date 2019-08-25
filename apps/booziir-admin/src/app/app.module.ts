@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -17,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
     IonicModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
-    CoreModule,
+    CoreModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
