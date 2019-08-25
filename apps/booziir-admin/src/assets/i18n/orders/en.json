@@ -1,3 +1,6 @@
 {
-  "TITLE": "Orders"
+  "TITLE": "Orders",
+  "INGREDIENTS": "Ingredients",
+  "PREPARATION": "Preparation",
+  "READY": "Ready"
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from '@booziir/shared-components';
+import { faBan, faCheck } from '@fortawesome/pro-light-svg-icons';
 
 @Component({
   selector: 'booziir-orders',
@@ -9,6 +10,8 @@ import { LanguageService } from '@booziir/shared-components';
   styleUrls: ['./orders.page.scss'],
 })
 export class OrdersPage implements OnInit {
+  faBan = faBan;
+  faCheck = faCheck;
 
   params: Params;
 
