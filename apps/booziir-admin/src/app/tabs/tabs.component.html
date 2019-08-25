@@ -1,0 +1,22 @@
+<ion-app>
+    <ion-router-outlet name="page"></ion-router-outlet>
+
+    <ion-tabs>
+        <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="orders">
+                <fa-icon [icon]="faBallot" size="2x"></fa-icon>
+                <ion-label>{{ 'ORDERS' | translate }}</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button tab="cocktails">
+                <fa-icon [icon]="faCocktail" size="2x"></fa-icon>
+                <ion-label>{{ 'COCKTAILS' | translate }}</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button tab="ingredients">
+                <fa-icon [icon]="faLemon" size="2x"></fa-icon>
+                <ion-label>{{ 'INGREDIENTS' | translate }}</ion-label>
+            </ion-tab-button>
+        </ion-tab-bar>
+    </ion-tabs>
+</ion-app>

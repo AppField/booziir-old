@@ -6,14 +6,8 @@ import { IonicModule } from '@ionic/angular';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { i18nPath } from '@booziir/shared';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { AppRoutingModule } from './app-routing.module';
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, i18nPath(''), '.json');
-}
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,16 +16,8 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     IonicModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AppRoutingModule,
     CoreModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      },
-      isolate: true
-    })
   ],
   providers: [],
   bootstrap: [AppComponent]
