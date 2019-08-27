@@ -14,8 +14,11 @@
     "booziir-admin": {
       "tags": []
     },
-    "shared-components": {
+    "shared-modules": {
       "tags": []
+    },
+    "authentication": {
+      "tags": ["auth", "authentication"]
     }
   }
 }

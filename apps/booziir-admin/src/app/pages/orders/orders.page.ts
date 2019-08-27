@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from '@booziir/shared-components';
+import { LanguageService } from 'libs/shared-modules/src';
 import { faBan, faCheck } from '@fortawesome/pro-light-svg-icons';
 
 @Component({

@@ -178,28 +178,59 @@
         }
       }
     },
-    "shared-components": {
+    "shared-modules": {
       "projectType": "library",
-      "root": "libs/shared-components",
-      "sourceRoot": "libs/shared-components/src",
+      "root": "libs/shared-modules",
+      "sourceRoot": "libs/shared-modules/src",
       "prefix": "booziir",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/shared-components/tsconfig.lib.json",
-              "libs/shared-components/tsconfig.spec.json"
+              "libs/shared-modules/tsconfig.lib.json",
+              "libs/shared-modules/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared-components/**"]
+            "exclude": ["**/node_modules/**", "!libs/shared-modules/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared-components/jest.config.js",
-            "tsConfig": "libs/shared-components/tsconfig.spec.json",
-            "setupFile": "libs/shared-components/src/test-setup.ts"
+            "jestConfig": "libs/shared-modules/jest.config.js",
+            "tsConfig": "libs/shared-modules/tsconfig.spec.json",
+            "setupFile": "libs/shared-modules/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "authentication": {
+      "projectType": "library",
+      "root": "libs/authentication",
+      "sourceRoot": "libs/authentication/src",
+      "prefix": "booziir",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/authentication/tsconfig.lib.json",
+              "libs/authentication/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/authentication/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/authentication/jest.config.js",
+            "tsConfig": "libs/authentication/tsconfig.spec.json",
+            "setupFile": "libs/authentication/src/test-setup.ts"
           }
         }
       },

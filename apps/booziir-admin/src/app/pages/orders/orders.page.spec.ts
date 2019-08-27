@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OrdersPage } from './orders.page';
 import { RouterTestingModule } from '@angular/router/testing';
-import { TranslateTestingModule } from '@booziir/shared-components';
+import { TranslateTestingModule } from 'libs/shared-modules/src';
 
 describe('OrdersPage', () => {
   let component: OrdersPage;

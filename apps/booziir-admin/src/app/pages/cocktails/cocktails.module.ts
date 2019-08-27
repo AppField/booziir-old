@@ -10,7 +10,8 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { i18nPath } from '@booziir/shared';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { SharedModule } from '../../shared.module';
+import { SharedModule } from '@booziir/shared-modules';
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, i18nPath('cocktails'), '.json');

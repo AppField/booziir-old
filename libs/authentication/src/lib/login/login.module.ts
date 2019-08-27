@@ -1,17 +1,14 @@
-import { NgModule } from '@angular/core';
+import { LoginPage } from './login.page';
+import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
-
-import { OrdersPage } from './orders.page';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { i18nPath } from '@booziir/shared';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { SharedModule } from '@booziir/shared-modules';
-
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { sharedModule } from '../shared.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, i18nPath('orders'), '.json');
@@ -20,7 +17,7 @@ export function createTranslateLoader(http: HttpClient) {
 const routes: Routes = [
   {
     path: '',
-    component: OrdersPage
+    component: LoginPage
   }
 ];
 
@@ -30,7 +27,7 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    SharedModule,
+    sharedModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -40,6 +37,6 @@ const routes: Routes = [
       isolate: true
     })
   ],
-  declarations: [OrdersPage]
+  declarations: [LoginPage]
 })
-export class OrdersPageModule { }
+export class LoginPageModule { }
