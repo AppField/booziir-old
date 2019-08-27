@@ -19,6 +19,9 @@
     },
     "authentication": {
       "tags": ["auth", "authentication"]
+    },
+    "shared-services": {
+      "tags": []
     }
   }
 }

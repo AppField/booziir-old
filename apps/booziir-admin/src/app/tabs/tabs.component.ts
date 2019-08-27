@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCocktail, faBallot, faLemon } from '@fortawesome/pro-light-svg-icons';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService } from 'libs/shared-modules/src';
+import { LanguageService } from '@booziir/shared-services';
 import { BasicComponent } from '@booziir/shared';
 
 @Component({

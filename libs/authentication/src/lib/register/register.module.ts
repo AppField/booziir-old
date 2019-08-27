@@ -1,4 +1,4 @@
-import { LoginPage } from './login.page';
+import { RegisterPage } from './register.page';
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
@@ -18,7 +18,7 @@ export function createTranslateLoader(http: HttpClient) {
 const routes: Routes = [
   {
     path: '',
-    component: LoginPage
+    component: RegisterPage
   }
 ];
 
@@ -38,6 +38,6 @@ const routes: Routes = [
       isolate: true
     })
   ],
-  declarations: [LoginPage]
+  declarations: [RegisterPage]
 })
 export class LoginPageModule { }

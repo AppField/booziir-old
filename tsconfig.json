@@ -18,7 +18,8 @@
     "paths": {
       "@booziir/shared": ["libs/shared/index.ts"],
       "@booziir/shared-modules": ["libs/shared-modules/src/index.ts"],
-      "@booziir/authentication": ["libs/authentication/src/index.ts"]
+      "@booziir/authentication": ["libs/authentication/src/index.ts"],
+      "@booziir/shared-services": ["libs/shared-services/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
