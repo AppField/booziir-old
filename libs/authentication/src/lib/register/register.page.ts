@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { LanguageService, AuthService } from '@booziir/shared-services';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { isEmail, matchPasswordValidator } from '@booziir/shared';
 
 @Component({
   selector: 'booziir-register',
@@ -7,9 +11,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPage implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(
+    private readonly translate: TranslateService,
+    private readonly language: LanguageService,
+    private readonly fb: FormBuilder,
+    private readonly auth: AuthService
+  ) {
+    translate.setDefaultLang('en');
+    this.language.lang
+      .subscribe((currLang: string) => this.translate.use(currLang));
+  }
 
   ngOnInit() {
+    this.buildForm();
+  }
+
+  private buildForm(): void {
+    this.form = this.fb.group({
+      displayName: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, isEmail]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      passwordRepeated: ['', [Validators.required, matchPasswordValidator]],
+      readDataProtection: [false, [Validators.required, Validators.requiredTrue]]
+    });
+  }
+
+  register(): void {
+    this.form.markAllAsTouched();
+    if (this.form.valid) {
+      console.log('valid!');
+    }
   }
 
 }
