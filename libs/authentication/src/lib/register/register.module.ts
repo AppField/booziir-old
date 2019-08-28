@@ -12,7 +12,7 @@ import { SharedModule } from '@booziir/shared-modules';
 
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, i18nPath('orders'), '.json');
+  return new TranslateHttpLoader(http, i18nPath('register'), '.json');
 }
 
 const routes: Routes = [
