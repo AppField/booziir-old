@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Route } from '@angular/router';
+import { AuthRoutingModule } from './auth-routing.module';
 
-
-export const authenticationRoutes: Route[] = [];
 
 @NgModule({
-  imports: [CommonModule, RouterModule]
+  imports: [
+    CommonModule,
+    AuthRoutingModule
+  ]
 })
 export class AuthenticationModule { }

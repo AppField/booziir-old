@@ -1,13 +1,14 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy, LOCALE_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { User as FirebaseUser, auth } from 'firebase';
+import { User as FirebaseUser, auth } from 'firebase/app';
 import { IAuthService } from './auth.service.interface';
 import { switchMap } from 'rxjs/operators';
 import { SupportedProviders } from '@booziir/shared';
 import { User } from '@booziir/shared';
+import { getLocaleFirstDayOfWeek } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -113,11 +114,23 @@ export class AuthService implements IAuthService, OnDestroy {
   }
 
 
-  deleteAccount(email: string): Promise<boolean> {
-    throw new Error("Method not implemented.");
+  // ============= Delete user account and delete user document ===========
+  async deleteAccount(email: string): Promise<boolean> {
+    try {
+      await this.afAuth.auth.currentUser.delete();
+      this.signOut();
+    } catch (error) {
+      console.log('could not sign out', error);
+      return false;
+    }
   }
-  signOut(): Promise<void> {
-    throw new Error("Method not implemented.");
+
+  // Sign Out
+  async signOut(): Promise<void> {
+    await this.afAuth.auth.signOut();
+    this.userSubject$.next(null);
+    localStorage.removeItem('user');
+    this.router.navigate(['register']);
   }
 
   ngOnDestroy() {

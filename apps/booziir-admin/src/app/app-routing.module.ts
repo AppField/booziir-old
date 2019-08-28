@@ -1,31 +1,26 @@
 import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
 import { NgModule } from '@angular/core';
-
+import { AuthGuard } from '@booziir/authentication';
 
 
 const routes: Routes = [
-    // {
-    //     path: 'login',
-    //     loadChildren: () => import('./authentication/login/login.module').then(m => m.LoginModule)
-    // },
-    // {
-    //     path: 'register',
-    //     loadChildren: () => import('./authentication/register/register.module').then(m => m.RegisterModule)
-    // },
-    // {
-    //     path: 'setup-bar',
-    //     loadChildren: () => import('./pages/setup-bar/setup-bar.module').then(m => m.SetupBarModule)
-    // },
     {
         path: '',
-        // canLoad: [AuthGuard],
+        canLoad: [AuthGuard],
         loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule)
+    },
+    {
+        path: 'settings',
+        loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsPageModule)
     }
 ]
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+        RouterModule.forRoot(
+            routes,
+            { preloadingStrategy: PreloadAllModules, enableTracing: false }
+        )
     ],
     exports: [RouterModule]
 })

@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthenticationModule } from '@booziir/authentication';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,8 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     IonicModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AuthenticationModule,
     AppRoutingModule,
-    CoreModule    
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

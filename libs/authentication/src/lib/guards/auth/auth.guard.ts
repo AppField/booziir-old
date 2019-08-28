@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanLoad, Route, UrlSegment, Router } from '@angular/router';
 import { AuthService } from '../../auth-service/auth.service';
 import { AuthRoutes } from '../../enums';
 
@@ -15,11 +14,10 @@ export class AuthGuard implements CanLoad {
     route: Route,
     segments: UrlSegment[]): boolean {
     const user = this.auth.userValue();
-
     if (user) {
       return true;
     } else {
-      const returnUrl = segments[1].path;
+      const returnUrl = segments.map((s: UrlSegment) => s.path).join('/')
       this.router.navigate([AuthRoutes.REGISTER], { queryParams: { returnUrl } })
       return false
     }

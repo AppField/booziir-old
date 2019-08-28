@@ -1,4 +1,4 @@
-import { Route, RouterModule, PreloadAllModules } from "@angular/router";
+import { Route, RouterModule } from "@angular/router";
 import { AuthRoutes } from './enums';
 import { NgModule } from '@angular/core';
 
@@ -16,7 +16,7 @@ const routes: Route[] = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+        RouterModule.forChild(routes)
     ],
     exports: [RouterModule]
 })
