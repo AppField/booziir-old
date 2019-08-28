@@ -40,4 +40,4 @@ const routes: Routes = [
   ],
   declarations: [RegisterPage]
 })
-export class LoginPageModule { }
+export class RegisterPageModule { }
