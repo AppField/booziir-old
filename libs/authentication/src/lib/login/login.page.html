@@ -1,1 +1,10 @@
-<p>login works!</p>
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons>
+            <ion-back-button defaultHref="register">
+            </ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<booziir-login-content [form]="form" (submitForm)="login()"></booziir-login-content>

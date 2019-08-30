@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LanguageService, AuthService } from '@booziir/shared-services';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { isEmail } from '@booziir/shared';
+import { isEmail, BasicComponent } from '@booziir/shared';
 
 @Component({
   selector: 'booziir-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss']
+  templateUrl: 'login.page.html',
+  styleUrls: ['login.page.scss']
 })
-export class LoginPage implements OnInit {
+export class LoginPage extends BasicComponent implements OnInit {
 
   form: FormGroup;
 
@@ -19,19 +19,22 @@ export class LoginPage implements OnInit {
     private readonly fb: FormBuilder,
     private readonly auth: AuthService
   ) {
+    super();
     translate.setDefaultLang('en');
-    this.language.lang
-      .subscribe((currLang: string) => this.translate.use(currLang));
+    this.subscription.add(
+      this.language.lang
+        .subscribe((currLang: string) => this.translate.use(currLang)));
+
+    this.buildForm();
   }
 
   ngOnInit() {
-    this.buildForm();
   }
 
   private buildForm(): void {
     this.form = this.fb.group({
-      'email': ['', [Validators.required, isEmail]],
-      'password': ['', Validators.required]
+      email: ['', [Validators.required, isEmail]],
+      password: ['', Validators.required]
     });
   }
 

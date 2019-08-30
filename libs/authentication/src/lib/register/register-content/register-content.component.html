@@ -1,0 +1,99 @@
+<ion-content [fullscreen]="true">
+  <form [formGroup]="form" (ngSubmit)="submitForm.emit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4" class="ion-text-center">
+          <fa-icon [icon]="faGlassCheers" size="4x"></fa-icon>
+          <h1>Bartendr<br><small>{{ 'TITLE' | translate }}</small></h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4">
+          <ion-item>
+            <ion-label position="floating">{{ 'LABELS.NAME' | translate }}</ion-label>
+            <ion-input type="text" formControlName="displayName"></ion-input>
+          </ion-item>
+          <div class="error-message" *ngIf="errorRequired('displayName')" [@expandCollapse]>
+            {{ 'ERRORS.REQUIRED' | translate }}</div>
+          <div class="error-message" *ngIf="errorNameLength" [@expandCollapse]>
+            {{ 'ERRORS.LENGTH' | translate: { length: '3'} }}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4">
+          <ion-item>
+            <ion-label position="floating">{{ 'LABELS.EMAIL' | translate }}</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div class="error-message" *ngIf="errorRequired('email')" [@expandCollapse]>
+            {{ 'ERRORS.REQUIRED' | translate }}</div>
+          <div class="error-message" *ngIf="errorEmailInvalid" [@expandCollapse]>
+            {{ 'ERRORS.EMAIL-INVALID' | translate }}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4">
+          <ion-item>
+            <ion-label position="floating">{{ 'LABELS.PASSWORD' | translate }}</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <div class="error-message" *ngIf="errorRequired('password')" [@expandCollapse]>
+            {{ 'ERRORS.REQUIRED' | translate }}
+          </div>
+          <div class="error-message" *ngIf="errorPasswordLength" [@expandCollapse]>
+            {{ 'ERRORS.LENGTH' | translate: { length: '8' } }}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4">
+          <ion-item>
+            <ion-label position="floating">{{ 'LABELS.REPEAT-PASSWORD' | translate }}</ion-label>
+            <ion-input type="password" formControlName="passwordRepeated"></ion-input>
+          </ion-item>
+          <div class="error-message" *ngIf="errorRequired('passwordRepeated')" [@expandCollapse]>
+            {{ 'ERRORS.REQUIRED' | translate }}
+          </div>
+          <div class="error-message" *ngIf="errorPasswordMismatch" [@expandCollapse]>
+            {{ 'ERRORS.PASSWORD-MISMATCH' | translate }}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4" no-padding>
+          <ion-item>
+            <ion-label>{{ 'LABELS.READ-DATA-PROTECTION' | translate }}</ion-label>
+            <ion-checkbox formControlName="readDataProtection"></ion-checkbox>
+          </ion-item>
+          <div class="error-message" *ngIf="errorRequired('readDataProtection')" [@expandCollapse]>
+            {{ 'ERRORS.REQUIRED' | translate }}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4">
+          <ion-button type="submit" expand="block">{{ 'ACTIONS.SUBMIT' | translate }}</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4" class="ion-text-center">
+          <p class="or-indicator" [attr.content]="'OR' | translate"></p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4">
+          <ion-button class="google" expand="block" (click)="loginGoogle.emit()">
+            <fa-icon [icon]="faGoogle" slot="start"></fa-icon>
+            <span class="ion-padding-start">{{ 'ACTIONS.GOOGLE-LOGIN' | translate }}</span>
+          </ion-button>
+        </ion-col>
+        <ion-col size-md="6" size-lg="4" offset-md="3" offset-lg="4">
+          <ion-button expand="block" color="tertiary" fill="outline" routerLink="/login">
+            {{ 'ACTIONS.LOGIN-EXISTING-ACCOUNT' | translate }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

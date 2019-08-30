@@ -1,0 +1,46 @@
+:host {
+  height: 100%;
+}
+
+.google {
+  --background: #db4437;
+  --background-hover: #741c14;
+}
+
+.or-indicator {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: 0.5;
+
+  &:before {
+    content: '';
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--ion-color-tertiary),
+      transparent
+    );
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+  &:after {
+    content: attr(content);
+    position: relative;
+    display: inline-block;
+    color: black;
+
+    padding: 0 0.5em;
+    line-height: 1.5em;
+    // this is really the only tricky part, you need to specify the background color of the container element
+    color: var(--ion-color-tertiary);
+    background-color: #fcfcfa;
+  }
+}

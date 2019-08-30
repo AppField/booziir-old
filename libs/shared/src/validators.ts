@@ -7,7 +7,7 @@ interface ValidatorResult {
 export function isEmail(control: AbstractControl): ValidatorResult | boolean {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    return regex.test(control.value) ? true : { invalidemail: true };
+    return regex.test(control.value) ? true : { invalidEmail: true };
 }
 
 

@@ -1,0 +1,22 @@
+{
+  "TITLE": "Register",
+  "LABELS": {
+    "NAME": "Name",
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Password",
+    "REPEAT-PASSWORD": "Repeat your password",
+    "READ-DATA-PROTECTION": "I read the data protection agreement"
+  },
+  "ERRORS": {
+    "EMAIL-INVALID": "Please check your E-Mail format",
+    "LENGTH": "At least {{length}} characters are required",
+    "PASSWORD-MISMATCH": "Passwords are not the same",
+    "REQUIRED": "Required"
+  },
+  "OR": "or",
+  "ACTIONS": {
+    "SUBMIT": "Create account",
+    "GOOGLE-LOGIN": "Login with Google",
+    "LOGIN-EXISTING-ACCOUNT": "Login with existing account"
+  }
+}

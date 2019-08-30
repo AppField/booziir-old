@@ -3,6 +3,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { LanguageService, AuthService } from '@booziir/shared-services';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { isEmail, matchPasswordValidator } from '@booziir/shared';
+import { faGlassCheers } from '@fortawesome/pro-light-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'booziir-register',
@@ -10,6 +12,8 @@ import { isEmail, matchPasswordValidator } from '@booziir/shared';
   styleUrls: ['./register.page.scss']
 })
 export class RegisterPage implements OnInit {
+  faGlassCheers = faGlassCheers;
+  faGoogle = faGoogle;
 
   form: FormGroup;
 
@@ -44,5 +48,4 @@ export class RegisterPage implements OnInit {
       console.log('valid!');
     }
   }
-
 }

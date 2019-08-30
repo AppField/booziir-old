@@ -6,9 +6,10 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { i18nPath } from '@booziir/shared';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '@booziir/shared-modules';
+import { RegisterContentComponent } from './register-content/register-content.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -36,8 +37,9 @@ const routes: Routes = [
         deps: [HttpClient]
       },
       isolate: true
-    })
+    }),
+    ReactiveFormsModule
   ],
-  declarations: [RegisterPage]
+  declarations: [RegisterPage, RegisterContentComponent]
 })
 export class RegisterPageModule { }

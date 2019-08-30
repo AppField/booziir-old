@@ -1,0 +1,17 @@
+/* FORMS */
+
+.item-label.ion-invalid.ion-touched,
+.item-label.item-label-floating.item-has-focus.ion-invalid.ion-touched,
+.item-label.item-has-focus.item-label-floating.ion-invalid.ion-touched {
+  ion-label,
+  .label-floating {
+    --color: var(--ion-color-danger) !important;
+    color: var(--ion-color-danger) !important;
+  }
+}
+
+.error-message {
+  color: var(--ion-color-danger);
+  font-size: 0.75rem;
+  padding: 0.5rem 0 0 1rem;
+}

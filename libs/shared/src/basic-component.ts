@@ -3,7 +3,7 @@ import { OnDestroy } from '@angular/core';
 
 export class BasicComponent implements OnDestroy {
 
-    protected subscription: Subscription;
+    protected subscription: Subscription = new Subscription();
 
     ngOnDestroy() {
         this.subscription.unsubscribe();

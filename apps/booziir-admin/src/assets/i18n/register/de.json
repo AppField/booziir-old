@@ -1,0 +1,16 @@
+{
+  "TITLE": "Registrieren",
+  "LABELS": {
+    "NAME": "Name",
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Passwort",
+    "REPEAT-PASSWORD": "Wiederhole dein Passwort",
+    "READ-DATA-PROTECTION": "Ich habe die Datenschutzerklärung gelesen"
+  },
+  "OR": "oder",
+  "ACTIONS": {
+    "SUBMIT": "Account erstellen",
+    "GOOGLE-LOGIN": "Mit Google anmelden",
+    "LOGIN-EXISTING-ACCOUNT": "Mit bestehendem Account anmelden"
+  }
+}

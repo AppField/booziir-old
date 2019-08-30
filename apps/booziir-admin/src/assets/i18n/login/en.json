@@ -1,0 +1,12 @@
+{
+  "TITLE": "Login",
+  "LABELS": {
+    "EMAIL": "E-Mail",
+    "PASSWORD": "Password"
+  },
+  "ERRORS": {
+    "EMAIL-INVALID": "Please check your E-Mail format",
+    "REQUIRED": "Required"
+  },
+  "SUBMIT": "Login"
+}
