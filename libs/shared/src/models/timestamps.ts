@@ -1,9 +1,9 @@
 export class Timestamps {
     createdAt: Date;
-    updateAt: Date;
+    updatedAt: Date;
 
     constructor(createdAt?: Date, updatedAt?: Date) {
         this.createdAt = createdAt || new Date();
-        this.updateAt = updatedAt || new Date();
+        this.updatedAt = updatedAt || new Date();
     }
 }
