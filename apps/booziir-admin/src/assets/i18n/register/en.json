@@ -18,5 +18,6 @@
     "SUBMIT": "Create account",
     "GOOGLE-LOGIN": "Login with Google",
     "LOGIN-EXISTING-ACCOUNT": "Login with existing account"
-  }
+  },
+  "SETTINGS": "Settings"
 }

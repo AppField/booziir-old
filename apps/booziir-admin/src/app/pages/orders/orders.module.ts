@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { i18nPath } from '@booziir/shared';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { SharedModule } from '@booziir/shared-modules';
+import { SharedModule, HeaderModule } from '@booziir/shared-modules';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -31,6 +31,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     SharedModule,
+    HeaderModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

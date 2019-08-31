@@ -7,7 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { i18nPath } from '@booziir/shared';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { SharedModule } from '@booziir/shared-modules';
+import { SharedModule, HeaderModule } from '@booziir/shared-modules';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -20,7 +20,7 @@ export function createTranslateLoader(http: HttpClient) {
         IonicModule,
         TabsRoutingModule,
         HttpClientModule,
-        SharedModule,
+        SharedModule,                
         TranslateModule.forChild({
             loader: {
                 provide: TranslateLoader,
@@ -30,6 +30,8 @@ export function createTranslateLoader(http: HttpClient) {
             isolate: true
         })
     ],
+    exports: [HeaderModule],
+
     declarations: [TabsComponent]
 })
 export class TabsModule { }

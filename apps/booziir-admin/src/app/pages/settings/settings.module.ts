@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { SettingsPage } from './settings.page';
-import { SharedModule } from '@booziir/shared-modules';
+import { SharedModule, HeaderModule } from '@booziir/shared-modules';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -30,6 +30,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     SharedModule,
+    HeaderModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
