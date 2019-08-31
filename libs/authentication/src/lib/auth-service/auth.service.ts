@@ -5,7 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { User as FirebaseUser, auth } from 'firebase/app';
 import { IAuthService } from './auth.service.interface';
-import { switchMap, take, map } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { SupportedProviders } from '@booziir/shared';
 import { User } from '@booziir/shared';
 
@@ -101,7 +101,7 @@ export class AuthService implements IAuthService, OnInit, OnDestroy {
   async emailLogin(email: string, password: string): Promise<boolean> {
     try {
       const credential = await this.afAuth.auth.signInWithEmailAndPassword(email, password);
-      this.updateUserData(credential.user, SupportedProviders.EMAIL);
+      await this.updateUserData(credential.user, SupportedProviders.EMAIL);
       this.handleLogin(this.returnUrl);
       return true;
     } catch (error) {
@@ -122,18 +122,18 @@ export class AuthService implements IAuthService, OnInit, OnDestroy {
 
   // Set User Data to Firestore
 
-  updateUserData(user: FirebaseUser, provider?: SupportedProviders, displayName?: string, readDataProtection?: boolean) {
+  async updateUserData(user: FirebaseUser, provider?: SupportedProviders, displayName?: string, readDataProtection?: boolean) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`${this.userCollectionName}/${user.uid}`);
     const data = new User(user.uid, user.email, user.photoURL, null, null, provider, null, null);
 
     if (displayName) data.displayName = displayName;
     if (readDataProtection) data.readDataProtection = readDataProtection;
 
-    return userRef.set({ ...data }, { merge: true });
+    return await userRef.set({ ...data }, { merge: true });
   }
 
   // ============= Delete user account and delete user document ===========
-  async deleteAccount(email: string): Promise<boolean> {
+  async deleteAccount(): Promise<boolean> {
     try {
       await this.afAuth.auth.currentUser.delete();
       this.signOut();

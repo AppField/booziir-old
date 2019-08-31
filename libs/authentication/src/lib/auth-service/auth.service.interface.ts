@@ -30,7 +30,7 @@ export interface IAuthService {
     updateUserData(user: FirebaseUser, provider: SupportedProviders, displayName?: string, readDataProtection?: boolean);
 
     // ============= Delete user account and delete user document ===========
-    deleteAccount(email: string): Promise<boolean>;
+    deleteAccount(): Promise<boolean>;
 
     signOut(): Promise<void>;
 
