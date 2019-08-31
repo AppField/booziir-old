@@ -1,15 +1,21 @@
 import { auth, User as FirebaseUser } from 'firebase/app';
 import { SupportedProviders } from '@booziir/shared';
 import { User } from '@booziir/shared';
+import { Subscription, BehaviorSubject, Observable } from 'rxjs';
 
 export interface IAuthService {
+    userSubject$: BehaviorSubject<User>;
+    user$: Observable<User>
+    returnUrl: string;
+    userCollectionName: string;
+
     setupAuthState(): void;
 
     userValue(): User;
 
     // ============ OAuth Methos ============
 
-    googleLogin();
+    loginGoogle();
 
     oAuthLogin(provider: auth.AuthProvider): Promise<boolean>;
 
@@ -21,10 +27,12 @@ export interface IAuthService {
     resetPassword(email: string): Promise<boolean>
 
     // Sets user data to firestore 
-    updateUserData(user: FirebaseUser, provider?: SupportedProviders, displayName?: string, readDataProtection?: boolean);
+    updateUserData(user: FirebaseUser, provider: SupportedProviders, displayName?: string, readDataProtection?: boolean);
 
     // ============= Delete user account and delete user document ===========
     deleteAccount(email: string): Promise<boolean>;
 
     signOut(): Promise<void>;
+
+    handleLogin(returnUrl: string): void;
 }

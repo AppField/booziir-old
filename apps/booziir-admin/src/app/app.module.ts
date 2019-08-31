@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthenticationModule } from '@booziir/authentication';
+import { USER_COLLECTION_NAME, DEFAULT_RETURN_URL } from '@booziir/shared-services';
 
 
 @NgModule({
@@ -21,7 +22,16 @@ import { AuthenticationModule } from '@booziir/authentication';
     AppRoutingModule,
     CoreModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: USER_COLLECTION_NAME,
+      useValue: 'barUsers'
+    },
+    {
+      provide: DEFAULT_RETURN_URL,
+      useValue: '/tabs/orders'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

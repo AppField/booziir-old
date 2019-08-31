@@ -41,7 +41,8 @@ export class LoginPage extends BasicComponent implements OnInit {
   login(): void {
     this.form.markAllAsTouched();
     if (this.form.valid) {
-      console.log('form valid!');
+      const value = this.form.value;
+      this.auth.emailLogin(value.email, value.password);
     }
   }
 

@@ -33,6 +33,20 @@ const routes: Routes = [
                         loadChildren: () => import('./../pages/ingredients/ingredients.module').then(m => m.IngredientsPageModule)
                     }
                 ]
+            },
+            {
+                path: 'settings',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => import('./../pages/settings/settings.module').then(m => m.SettingsPageModule)
+                    }
+                ]
+            },
+            {
+                path: '**',
+                pathMatch: 'full',
+                redirectTo: 'orders'
             }
         ]
     },

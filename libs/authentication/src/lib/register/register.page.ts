@@ -45,7 +45,13 @@ export class RegisterPage implements OnInit {
   register(): void {
     this.form.markAllAsTouched();
     if (this.form.valid) {
-      console.log('valid!');
+      const value = this.form.value;
+      this.auth.emailRegister(value.email, value.password, value.displayName, value.readDataProtection);
     }
   }
+
+  loginGoogle(): void {
+    this.auth.loginGoogle();
+  }
+
 }

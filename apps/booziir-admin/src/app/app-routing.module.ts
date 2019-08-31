@@ -6,12 +6,8 @@ import { AuthGuard } from '@booziir/authentication';
 
 const routes: Routes = [
     {
-        path: 'settings',
-        loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsPageModule)
-    },
-    {
         path: '',
-        // canLoad: [AuthGuard],
+        canLoad: [AuthGuard],
         loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule)
     }
 ]
