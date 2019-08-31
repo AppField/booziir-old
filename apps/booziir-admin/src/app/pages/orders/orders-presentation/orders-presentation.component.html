@@ -1,0 +1,48 @@
+<div class="order-container">
+  <h1 class="ion-padding-start">Vodka Sour</h1>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card-header>
+              <ion-card-title>{{ 'INGREDIENTS' | translate }}</ion-card-title>
+            </ion-card-header>
+
+            <ul>
+              <li>4 cl Vodka</li>
+              <li>2 cl Zitronensaft</li>
+              <li>6 clSoda</li>
+            </ul>
+          </ion-col>
+          <ion-col>
+            <ion-card-header>
+              <ion-card-title>{{ 'PREPARATION' | translate }}</ion-card-title>
+            </ion-card-header>
+            <ol>
+              <li>Alle Zutaten in Shaker geben und sch&uuml;tteln</li>
+              <li>aufgiessen</li>
+            </ol>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row class="ion-margin-top ion-padding-top ion-justify-content-evenly">
+    <ion-col size="12" size-sm="4">
+      <ion-button color="danger" fill="outline" size="large" expand="block">
+        <fa-icon [icon]="faBan" size="2x"></fa-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="12" size-sm="4">
+      <ion-button color="success" size="large" expand="block">
+        {{ 'READY' | translate }}
+        <fa-icon class="ion-padding-start" [icon]="faCheck" size="2x"></fa-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</div>

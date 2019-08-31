@@ -1,44 +1,5 @@
 <booziir-header [title]="'TITLE' | translate"></booziir-header>
 
 <ion-content>
-
-  <ion-list>
-    <ion-list-header>
-      <ion-label>{{ 'RECIPES' | translate }}</ion-label>
-      <ion-button fill="clear" color="primary">
-        <fa-icon [icon]="faPlus" size="2x"></fa-icon>
-      </ion-button>
-    </ion-list-header>
-    <ion-item>
-      <fa-icon slot="start" [icon]="faGlassWhiskeyRocks" size="2x"></fa-icon>
-      <ion-label>
-        <h2>Whiskey Sour</h2>
-        <p>Whiskey, Zitronensaft, Zuckersirup</p>
-      </ion-label>
-      <ion-button slot="end" fill="clear">
-        <fa-icon slot="icon-only" [icon]="faPen" size="2x"></fa-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <fa-icon slot="start" [icon]="faGlassCitrus" size="2x"></fa-icon>
-      <ion-label>
-        <h2>Cuba Libre</h2>
-        <ion-label></ion-label>
-      </ion-label>
-      <ion-button slot="end" fill="clear">
-        <fa-icon slot="icon-only" [icon]="faPen" size="2x"></fa-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item>
-      <fa-icon slot="start" [icon]="faGlassCitrus" size="2x"></fa-icon>
-      <ion-label>
-        <h2>Mojito</h2>
-        <p>Wei&szlig;er Rum, Rohrzucker, Minze</p>
-      </ion-label>
-      <ion-button slot="end" fill="clear">
-        <fa-icon slot="icon-only" [icon]="faPen" size="2x"></fa-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-
+  <booziir-cocktails-presentation></booziir-cocktails-presentation>
 </ion-content>

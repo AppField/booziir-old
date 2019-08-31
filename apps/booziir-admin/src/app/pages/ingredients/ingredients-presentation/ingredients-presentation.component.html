@@ -1,0 +1,38 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size-xs="12" size-lg>
+      <ion-list>
+        <ion-list-header>
+          <fa-icon [icon]="faWineBottle" size="2x"></fa-icon>
+          <ion-label>
+            {{ 'ALCOHOLICS' | translate }}
+          </ion-label>
+          <ion-button fill="clear" color="primary">
+            <fa-icon [icon]="faPlus" size="2x"></fa-icon>
+          </ion-button>
+        </ion-list-header>
+        <ion-item>Vodka</ion-item>
+        <ion-item>Rum</ion-item>
+        <ion-item>Whisky</ion-item>
+      </ion-list>
+    </ion-col>
+
+    <ion-col size-xs="12" size-lg>
+      <ion-list>
+        <ion-list-header>
+          <fa-icon [icon]="faGlass" size="2x"></fa-icon>
+          <ion-label>
+            {{ 'NON-ALCOHOLICS' | translate }}
+          </ion-label>
+          <ion-button fill="clear" color="primary">
+            <fa-icon [icon]="faPlus" size="2x"></fa-icon>
+          </ion-button>
+        </ion-list-header>
+        <ion-item>Cola</ion-item>
+        <ion-item>Soda</ion-item>
+        <ion-item>Rohrzucker </ion-item>
+      </ion-list>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>

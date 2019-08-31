@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { i18nPath } from '@booziir/shared';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { SharedModule, HeaderModule } from '@booziir/shared-modules';
+import { CocktailsPresentationComponent } from './cocktails-presentation/cocktails-presentation.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -41,6 +42,6 @@ const routes: Routes = [
       isolate: true
     })
   ],
-  declarations: [CocktailsPage]
+  declarations: [CocktailsPage, CocktailsPresentationComponent]
 })
 export class CocktailsPageModule { }
