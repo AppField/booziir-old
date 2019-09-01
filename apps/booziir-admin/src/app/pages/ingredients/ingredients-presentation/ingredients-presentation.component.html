@@ -1,52 +1,15 @@
 <ion-grid>
   <ion-row>
     <ion-col size-xs="12" size-lg>
-      <ion-list>
-        <ion-list-header>
-          <fa-icon [icon]="faWineBottle" size="2x"></fa-icon>
-          <ion-label>
-            {{ 'ALCOHOLICS' | translate }}
-          </ion-label>
-          <ion-button fill="clear" color="primary">
-            <fa-icon [icon]="faPlus" size="2x"></fa-icon>
-          </ion-button>
-        </ion-list-header>
-        <ion-item *ngFor="let ingredient of alcoholics">{{ ingredient.name }}</ion-item>
-      </ion-list>
+      <booziir-alcoholic-ingredients></booziir-alcoholic-ingredients>
     </ion-col>
 
     <ion-col size-xs="12" size-lg>
-      <ion-list>
-        <ion-list-header>
-          <fa-icon [icon]="faGlass" size="2x"></fa-icon>
-          <ion-label>
-            {{ 'NON-ALCOHOLICS' | translate }}
-          </ion-label>
-          <ion-button fill="clear" color="primary">
-            <fa-icon [icon]="faPlus" size="2x"></fa-icon>
-          </ion-button>
-        </ion-list-header>
-        <ion-item *ngFor="let ingredient of nonAlcoholics">{{ ingredient.name }}</ion-item>
-      </ion-list>
+      <booziir-non-alcoholic-ingredients></booziir-non-alcoholic-ingredients>
     </ion-col>
 
     <ion-col size-xs="12" size-lg>
-      <ion-list>
-        <ion-list-header>
-          <fa-icon [icon]="faLemon" size="2x"></fa-icon>
-          <ion-label>
-            {{ 'NON-LIQUIDS' | translate }}
-          </ion-label>
-          <ion-button fill="clear" color="primary">
-            <fa-icon [icon]="faPlus" size="2x"></fa-icon>
-          </ion-button>
-        </ion-list-header>
-        <ion-item *ngFor="let ingredient of nonLiquids">
-          <h2>{{ ingredient.name }}</h2>
-          <p>{{ getMeasureName(ingredient.measure) }}</p>
-        </ion-item>
-      </ion-list>
+      <booziir-non-liquid-ingredients></booziir-non-liquid-ingredients>
     </ion-col>
-
   </ion-row>
 </ion-grid>

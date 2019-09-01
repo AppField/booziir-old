@@ -1,0 +1,9 @@
+<ion-list>
+  <booziir-ingredient-list-header [headerTitle]="'NON-LIQUIDS' | translate " [icon]="faLemon"
+    (click)="addNonLiquid.emit()">
+  </booziir-ingredient-list-header>
+  <ion-item *ngFor="let ingredient of nonLiquids">
+    <h2>{{ ingredient.name }}</h2>
+    <p>{{ getMeasureName(ingredient.measure) }}</p>
+  </ion-item>
+</ion-list>
