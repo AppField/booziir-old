@@ -2,5 +2,16 @@
   "TITLE": "Ingredients",
   "ALCOHOLICS": "Alcoholics",
   "NON-ALCOHOLICS": "Non-Alcoholics",
-  "SETTINGS": "Settings"
+  "NON-LIQUIDS": "Non-Liquids",
+  "SETTINGS": "Settings",
+  "MEASURE": {
+    "G": "Gram",
+    "TEASPOON": "Teaspoon",
+    "TABLESPOON": "Tablespoon",
+    "BARSPOON": "Bar spoon",
+    "PIECE": "Piece",
+    "SLICE": "Slice",
+    "DESCRIPTION": "Description",
+    "AT-WILL": "At will"
+  }
 }
