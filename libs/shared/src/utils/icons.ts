@@ -20,29 +20,29 @@ export enum CocktailIcons {
 
 export const getCocktailIcon = (icon: string): IconDefinition => {
     switch (icon) {
-        case c.BEER:
+        case CocktailIcons.BEER:
             return faBeer
-        case c.WINE_GLASS:
+        case CocktailIcons.WINE_GLASS:
             return faWineGlass;
-        case c.WHISKEY_GLASS_ROCKS:
+        case CocktailIcons.WHISKEY_GLASS_ROCKS:
             return faGlassWhiskeyRocks;
-        case c.GLASS_WHISKEY:
+        case CocktailIcons.GLASS_WHISKEY:
             return faGlassWhiskey;
-        case c.GLASS_MARTINI:
+        case CocktailIcons.GLASS_MARTINI:
             return faGlassMartini;
-        case c.GLASS_CHAMPAGNE:
+        case CocktailIcons.GLASS_CHAMPAGNE:
             return faGlassChampagne;
-        case c.GLASS:
+        case CocktailIcons.GLASS:
             return faGlass;
-        case c.COCKTAIL:
+        case CocktailIcons.COCKTAIL:
             return faCocktail;
-        case c.GLASS_CITRUS:
+        case CocktailIcons.GLASS_CITRUS:
             return faGlassCitrus;
-        case c.FLASK_POISON:
+        case CocktailIcons.FLASK_POISON:
             return faFlaskPoison;
-        case c.FLASK_POTION:
+        case CocktailIcons.FLASK_POTION:
             return faFlaskPotion;
-        case c.MUG_HOT:
+        case CocktailIcons.MUG_HOT:
             return faMugHot;
         default:
             return faGlass
