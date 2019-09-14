@@ -6,10 +6,22 @@ import { NonLiquidIngredientsPresentationComponent } from './non-liquid-ingredie
 import { IngredientListHeaderModule } from '../ingredient-list-header/ingredient-list-header.module';
 import { SharedModule } from '@booziir/shared-modules';
 import { TranslateModule } from '@ngx-translate/core';
+import { NonLiquidModalComponent } from './non-liquid-modal/non-liquid-modal.component';
 
 @NgModule({
-    imports: [CommonModule, IonicModule, IngredientListHeaderModule, SharedModule, TranslateModule],
-    declarations: [NonLiquidIngredientsComponent, NonLiquidIngredientsPresentationComponent],
+    imports: [
+        CommonModule,
+        IonicModule,
+        IngredientListHeaderModule,
+        SharedModule,
+        TranslateModule
+    ],
+    declarations: [
+        NonLiquidIngredientsComponent,
+        NonLiquidIngredientsPresentationComponent,
+        NonLiquidModalComponent
+    ],
+    entryComponents: [NonLiquidModalComponent],
     exports: [NonLiquidIngredientsComponent]
 })
 export class NonLiquidIngredientsModule { }

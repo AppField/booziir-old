@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingredient } from '@booziir/shared';
+import { LiquidIngredient } from '@booziir/shared';
+import { IngredientsAlcoholicService } from '../../../services/ingredients-alcoholic/ingredients-alcoholic.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'booziir-alcoholic-ingredients',
@@ -8,16 +10,20 @@ import { Ingredient } from '@booziir/shared';
 })
 export class AlcoholicIngredientsComponent implements OnInit {
 
-  alcoholics: Ingredient[] = [];
+  alcoholics$: Observable<LiquidIngredient[]>;
 
-  constructor() { }
-
-  ngOnInit() {
-    console.log(this.alcoholics);
+  constructor(
+    private readonly alcoholicsService: IngredientsAlcoholicService
+  ) {
+    this.alcoholics$ = this.alcoholicsService.items$;
   }
 
-  addAlcoholic(): void {
-    console.log('add');
+  ngOnInit() {
+
+  }
+
+  addAlcoholic(alcoholic: LiquidIngredient): void {
+    this.alcoholicsService.addItem(alcoholic);
   }
 
 }

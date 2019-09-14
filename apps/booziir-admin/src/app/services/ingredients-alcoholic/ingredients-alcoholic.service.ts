@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { IFirestoreService } from '@booziir/shared-services';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AuthService } from '@booziir/authentication';
+import { AuthService, USER_COLLECTION_NAME } from '@booziir/authentication';
 import { Ingredient, LiquidIngredient } from '@booziir/shared';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -20,11 +19,11 @@ export class IngredientsAlcoholicService implements IFirestoreService<LiquidIngr
   items$ = this._items$.asObservable();
 
   constructor(
+    @Inject(USER_COLLECTION_NAME) userCollectionName: string,
     private readonly afs: AngularFirestore,
-    private readonly afAuth: AngularFireAuth,
     private readonly authService: AuthService
   ) {
-    this.collectionPath = `barUsers/${this.authService.userValue().uid}/alcoholics`;
+    this.collectionPath = `${userCollectionName}/${this.authService.userValue().uid}/alcoholics`;
     this.setupCollection(this.collectionPath);
     this.setupSnapshotChanges(this.collection)
   }
@@ -45,9 +44,7 @@ export class IngredientsAlcoholicService implements IFirestoreService<LiquidIngr
           });
         })
       )
-      .subscribe((items: LiquidIngredient[]) => {
-        this._items$.next(items);
-      });
+      .subscribe((items: LiquidIngredient[]) => this._items$.next(items));
   }
 
   async addItem(item: LiquidIngredient): Promise<void> {

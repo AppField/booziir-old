@@ -6,11 +6,23 @@ import { NonAlcoholicIngredientsPresentationComponent } from './non-alcoholic-in
 import { IngredientListHeaderModule } from '../ingredient-list-header/ingredient-list-header.module';
 import { SharedModule } from '@booziir/shared-modules';
 import { TranslateModule } from '@ngx-translate/core';
+import { NonAlcoholicModalComponent } from './non-alcoholic-modal/non-alcoholic-modal.component';
 
 
 @NgModule({
-    imports: [CommonModule, IonicModule, IngredientListHeaderModule, SharedModule, TranslateModule],
-    declarations: [NonAlcoholicIngredientsComponent, NonAlcoholicIngredientsPresentationComponent],
+    imports: [
+        CommonModule,
+        IonicModule,
+        IngredientListHeaderModule,
+        SharedModule,
+        TranslateModule
+    ],
+    declarations: [
+        NonAlcoholicIngredientsComponent,
+        NonAlcoholicIngredientsPresentationComponent,
+        NonAlcoholicModalComponent
+    ],
+    entryComponents: [NonAlcoholicModalComponent],
     exports: [NonAlcoholicIngredientsComponent]
 })
 export class NonAlcoholicIngredientsModule { }

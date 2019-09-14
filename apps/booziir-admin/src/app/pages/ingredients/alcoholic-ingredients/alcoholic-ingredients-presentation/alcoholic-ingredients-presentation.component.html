@@ -2,5 +2,8 @@
   <booziir-ingredient-list-header [headerTitle]="'ALCOHOLICS' | translate" [icon]="faWineBottle"
     (addIngredient)="addAlcoholic.emit()">
   </booziir-ingredient-list-header>
-  <ion-item *ngFor="let ingredient of alcoholics">{{ ingredient.name }}</ion-item>
+  <ion-item *ngFor="let ingredient of alcoholics; trackBy: trackByFn">
+    <!-- {{ ingredient.name }} -->
+    {{ingredient | json}}
+  </ion-item>
 </ion-list>
