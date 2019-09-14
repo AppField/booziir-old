@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService, AuthService } from '@booziir/shared-services';
+import { LanguageService } from '@booziir/shared-services';
+import { AuthService } from '@booziir/authentication';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { isEmail, matchPasswordValidator } from '@booziir/shared';
 import { faGlassCheers } from '@fortawesome/pro-light-svg-icons';

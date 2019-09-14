@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingredient } from '@booziir/shared';
 
 @Component({
   selector: 'booziir-alcoholic-ingredients',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlcoholicIngredientsComponent implements OnInit {
 
+  alcoholics: Ingredient[] = [];
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.alcoholics);
+  }
+
+  addAlcoholic(): void {
+    console.log('add');
+  }
 
 }

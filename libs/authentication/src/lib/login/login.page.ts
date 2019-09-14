@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService, AuthService } from '@booziir/shared-services';
+import { LanguageService } from '@booziir/shared-services';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { isEmail, BasicComponent } from '@booziir/shared';
+import { AuthService } from '@booziir/authentication';
 
 @Component({
   selector: 'booziir-login',

@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthenticationModule } from '@booziir/authentication';
-import { USER_COLLECTION_NAME, DEFAULT_RETURN_URL } from '@booziir/shared-services';
+import { USER_COLLECTION_NAME, DEFAULT_RETURN_URL } from '@booziir/authentication';
 
 
 @NgModule({

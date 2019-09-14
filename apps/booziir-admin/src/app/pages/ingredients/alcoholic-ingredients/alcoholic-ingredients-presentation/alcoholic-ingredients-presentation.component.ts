@@ -11,7 +11,7 @@ import { Ingredient } from '@booziir/shared';
 export class AlcoholicIngredientsPresentationComponent {
   faWineBottle = faWineBottle;
 
-  @Input() alcoholics: Ingredient[];
+  @Input() alcoholics: Ingredient[] = [];
   @Output() addAlcoholic: EventEmitter<void> = new EventEmitter();
 
   constructor() { }

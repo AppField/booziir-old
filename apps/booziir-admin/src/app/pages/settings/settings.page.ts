@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { BasicComponent } from '@booziir/shared';
 import { TranslateService } from '@ngx-translate/core';
-import { LanguageService, AuthService } from '@booziir/shared-services';
+import { LanguageService } from '@booziir/shared-services';
+import { AuthService } from '@booziir/authentication';
 
 @Component({
   selector: 'booziir-settings',
