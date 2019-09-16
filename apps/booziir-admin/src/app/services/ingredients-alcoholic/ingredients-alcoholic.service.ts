@@ -2,20 +2,20 @@ import { Injectable, Inject } from '@angular/core';
 import { IFirestoreService } from '@booziir/shared-services';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { AuthService, USER_COLLECTION_NAME } from '@booziir/authentication';
-import { Ingredient, LiquidIngredient } from '@booziir/shared';
+import {  Ingredient } from '@booziir/shared';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class IngredientsAlcoholicService implements IFirestoreService<LiquidIngredient> {
+export class IngredientsAlcoholicService implements IFirestoreService<Ingredient> {
 
-  private _items$ = new BehaviorSubject<LiquidIngredient[]>(null);
+  private _items$ = new BehaviorSubject<Ingredient[]>(null);
   private activeSubscription: Subscription;
   collectionPath: string;
 
-  collection: AngularFirestoreCollection<LiquidIngredient>;
+  collection: AngularFirestoreCollection<Ingredient>;
   items$ = this._items$.asObservable();
 
   constructor(
@@ -29,7 +29,7 @@ export class IngredientsAlcoholicService implements IFirestoreService<LiquidIngr
   }
 
   setupCollection(collectionPath: string): void {
-    this.collection = this.afs.collection<LiquidIngredient>(collectionPath);
+    this.collection = this.afs.collection<Ingredient>(collectionPath);
   }
 
   setupSnapshotChanges(collection: AngularFirestoreCollection): void {
@@ -44,19 +44,19 @@ export class IngredientsAlcoholicService implements IFirestoreService<LiquidIngr
           });
         })
       )
-      .subscribe((items: LiquidIngredient[]) => this._items$.next(items));
+      .subscribe((items: Ingredient[]) => this._items$.next(items));
   }
 
-  async addItem(item: LiquidIngredient): Promise<void> {
+  async addItem(item: Ingredient): Promise<void> {
     // Firestore needs an object, not an instance of a class. Cast it to an object
-    // const copied = Object.assign({}, item) as LiquidIngredient;
+    // const copied = Object.assign({}, item) as Ingredient;
     await this.collection.add({ ...item });
   }
 
-  async updateItem(item: LiquidIngredient): Promise<void> {
+  async updateItem(item: Ingredient): Promise<void> {
     try {
       // Firestore needs an object, not an instance of a class. Cast it to an object
-      const copied = Object.assign({}, item) as LiquidIngredient;
+      const copied = Object.assign({}, item) as Ingredient;
       const id = copied.id;
       copied.id = null;
       copied.updatedAt = new Date();
@@ -67,7 +67,7 @@ export class IngredientsAlcoholicService implements IFirestoreService<LiquidIngr
     }
   }
 
-  async deleteItem(item: LiquidIngredient): Promise<void> {
+  async deleteItem(item: Ingredient): Promise<void> {
     try {
       const deleted = await this.collection.doc(`${item.id}`).delete();
       console.log('deleted', deleted);
