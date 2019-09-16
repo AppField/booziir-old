@@ -49,8 +49,8 @@ export class IngredientsAlcoholicService implements IFirestoreService<LiquidIngr
 
   async addItem(item: LiquidIngredient): Promise<void> {
     // Firestore needs an object, not an instance of a class. Cast it to an object
-    const copied = Object.assign({}, item) as LiquidIngredient;
-    await this.collection.add(copied);
+    // const copied = Object.assign({}, item) as LiquidIngredient;
+    await this.collection.add({ ...item });
   }
 
   async updateItem(item: LiquidIngredient): Promise<void> {

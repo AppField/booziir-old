@@ -7,6 +7,7 @@ import { IngredientListHeaderModule } from '../ingredient-list-header/ingredient
 import { SharedModule } from '@booziir/shared-modules';
 import { TranslateModule } from '@ngx-translate/core';
 import { AlcoholicModalComponent } from './alcoholic-modal/alcoholic-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AlcoholicModalComponent } from './alcoholic-modal/alcoholic-modal.compo
         IonicModule,
         IngredientListHeaderModule,
         SharedModule,
-        TranslateModule
+        TranslateModule,
+        ReactiveFormsModule
     ],
     declarations: [
         AlcoholicIngredientsComponent,

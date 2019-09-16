@@ -17,7 +17,7 @@ export class AlcoholicIngredientsPresentationComponent {
 
   constructor() { }
 
-  trackByFn(index: number, item: LiquidIngredient): string {
-    return item.id;
+  trackByFn(index: number, item: LiquidIngredient): number {
+    return index;
   }
 }

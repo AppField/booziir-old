@@ -13,5 +13,21 @@
     "SLICE": "Slice",
     "DESCRIPTION": "Description",
     "AT-WILL": "At will"
+  },
+  "MODALS": {
+    "ALCOHOLIC": {
+      "ADD": "Add Alcoholic",
+      "EDIT": "Edit Alcoholic"
+    },
+    "LABELS": {
+      "NAME": "Name",
+      "AVAILABLE": "Available"
+    },
+    "ERRORS": {
+      "REQUIRED": "Required"
+    },
+    "DELETE": "Delte",
+    "CANCEL": "Cancel",
+    "SAVE": "Save"
   }
 }

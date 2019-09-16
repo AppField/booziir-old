@@ -7,8 +7,8 @@ export class Ingredient extends BaseItem {
     constructor(id: string, name: string, available = true, updatedAt: Date, createdAt: Date) {
         super(id, updatedAt, createdAt);
 
-        this.name = name;
-        this.available = available;
+        this.name = name || null;
+        this.available = available || null;
     }
 
 }
@@ -16,14 +16,9 @@ export class Ingredient extends BaseItem {
 export type VolumeType = 'l' | 'cl';
 
 export class LiquidIngredient extends Ingredient {
-    volume: number;
-    volumeType: VolumeType;
 
-    constructor(id: string, name: string, available: boolean, volume: number, volumeType: VolumeType, updatedAt: Date, createdAt: Date) {
+    constructor(id?: string, name?: string, available?: boolean, updatedAt?: Date, createdAt?: Date) {
         super(id, name, available, updatedAt, createdAt)
-
-        this.volume = volume;
-        this.volumeType = volumeType;
     }
 }
 
