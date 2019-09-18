@@ -1,2 +1,3 @@
-<booziir-alcoholic-ingredients-presentation [alcoholics]="alcoholics$ | async" (addAlcoholic)="addAlcoholic()">
+<booziir-alcoholic-ingredients-presentation [alcoholics]="alcoholics$ | async" (addAlcoholic)="openModal()"
+    (editAlcoholic)="openModal($event)">
 </booziir-alcoholic-ingredients-presentation>

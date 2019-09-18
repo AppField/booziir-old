@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LiquidIngredient, expandCollapse } from '@booziir/shared';
+import { LiquidIngredient, expandCollapse, Ingredient } from '@booziir/shared';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
@@ -22,19 +22,22 @@ export class AlcoholicModalComponent implements OnInit {
     private readonly fb: FormBuilder,
     private readonly translate: TranslateService
   ) {
-    this.buildForm();
   }
 
   ngOnInit() {
     this.title = this.alcoholic && this.alcoholic.id
       ? this.translate.instant('MODALS.ALCOHOLIC.EDIT')
-      : this.translate.instant('MODALS.ALCOHOLIC.ADD')
+      : this.translate.instant('MODALS.ALCOHOLIC.ADD');
+
+    this.buildForm(this.alcoholic);
   }
 
-  private buildForm(): void {
+  private buildForm(ingredient: Ingredient): void {
+    const name = ingredient ? ingredient.name : '';
+    const available = ingredient ? ingredient.available : true;
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      available: [true, Validators.required]
+      name: [name, Validators.required],
+      available: [available, Validators.required]
     });
   }
 
@@ -42,16 +45,16 @@ export class AlcoholicModalComponent implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  delete(id: string): void {
-    console.log('delete', id);
+  delete(ingredient: Ingredient): void {
+    this.modalCtrl.dismiss(ingredient, 'delete');
   }
 
   save(): void {
     this.form.markAllAsTouched();
     if (this.form.valid) {
       const value = this.form.value;
-      const alcoholic = { ... this.alcoholic, value };
-      this.modalCtrl.dismiss(alcoholic);
+      const alcoholic = { ... this.alcoholic, name: value.name, available: value.available };
+      this.modalCtrl.dismiss(alcoholic, 'save');
     }
   }
 

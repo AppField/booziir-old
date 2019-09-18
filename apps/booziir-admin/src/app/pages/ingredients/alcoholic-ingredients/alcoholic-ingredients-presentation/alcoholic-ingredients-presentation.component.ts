@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { faWineBottle } from '@fortawesome/pro-light-svg-icons';
-import { LiquidIngredient } from '@booziir/shared';
+import { LiquidIngredient, Ingredient } from '@booziir/shared';
 
 @Component({
   selector: 'booziir-alcoholic-ingredients-presentation',
@@ -14,6 +14,7 @@ export class AlcoholicIngredientsPresentationComponent {
   @Input() alcoholics: LiquidIngredient[];
 
   @Output() addAlcoholic: EventEmitter<void> = new EventEmitter();
+  @Output() editAlcoholic: EventEmitter<Ingredient> = new EventEmitter();
 
   constructor() { }
 
