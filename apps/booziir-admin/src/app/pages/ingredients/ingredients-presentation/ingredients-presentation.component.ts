@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { faWineBottle, faGlass, faLemon } from '@fortawesome/pro-light-svg-icons';
 
 @Component({
   selector: 'booziir-ingredients-presentation',
@@ -7,6 +8,9 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IngredientsPresentationComponent {
-
+  faWineBottle = faWineBottle;
+  faGlass = faGlass;
+  faLemon = faLemon;
+  
   constructor() { }
 }

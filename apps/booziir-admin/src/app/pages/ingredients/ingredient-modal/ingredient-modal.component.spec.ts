@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NonAlcoholicModalComponent } from './non-alcoholic-modal.component';
+import { IngredientModalComponent } from './ingredient-modal.component';
 
-describe('NonAlcoholicModalComponent', () => {
-  let component: NonAlcoholicModalComponent;
-  let fixture: ComponentFixture<NonAlcoholicModalComponent>;
+describe('IngredientModalComponent', () => {
+  let component: IngredientModalComponent;
+  let fixture: ComponentFixture<IngredientModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NonAlcoholicModalComponent ],
+      declarations: [IngredientModalComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NonAlcoholicModalComponent);
+    fixture = TestBed.createComponent(IngredientModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

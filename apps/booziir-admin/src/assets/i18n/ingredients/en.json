@@ -1,8 +1,8 @@
 {
   "TITLE": "Ingredients",
   "ALCOHOLICS": "Alcoholics",
-  "NON-ALCOHOLICS": "Non-Alcoholics",
-  "NON-LIQUIDS": "Non-Liquids",
+  "NON-ALCOHOLICS": "Anti Alcoholics",
+  "NON-LIQUIDS": "None Liquids",
   "SETTINGS": "Settings",
   "MEASURE": {
     "G": "Gram",

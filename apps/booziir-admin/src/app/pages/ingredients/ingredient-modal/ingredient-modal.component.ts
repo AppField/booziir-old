@@ -1,18 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LiquidIngredient, expandCollapse, Ingredient } from '@booziir/shared';
+import { expandCollapse, Ingredient } from '@booziir/shared';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'booziir-alcoholic-modal',
-  templateUrl: './alcoholic-modal.component.html',
-  styleUrls: ['./alcoholic-modal.component.scss'],
+  selector: 'booziir-ingredient-modal',
+  templateUrl: './ingredient-modal.component.html',
+  styleUrls: ['./ingredient-modal.component.scss'],
   animations: [expandCollapse]
 })
-export class AlcoholicModalComponent implements OnInit {
+export class IngredientModalComponent implements OnInit {
 
-  @Input() alcoholic: LiquidIngredient;
+  @Input() alcoholic: Ingredient;
   title: string;
 
   form: FormGroup;

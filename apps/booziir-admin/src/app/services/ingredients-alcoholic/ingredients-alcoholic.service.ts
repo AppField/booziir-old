@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { IFirestoreService } from '@booziir/shared-services';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { AuthService, USER_COLLECTION_NAME } from '@booziir/authentication';
-import {  Ingredient } from '@booziir/shared';
+import { Ingredient } from '@booziir/shared';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 

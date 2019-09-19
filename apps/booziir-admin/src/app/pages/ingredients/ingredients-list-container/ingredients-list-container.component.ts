@@ -1,16 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LiquidIngredient, Ingredient } from '@booziir/shared';
 import { IngredientsAlcoholicService } from '../../../services/ingredients-alcoholic/ingredients-alcoholic.service';
 import { Observable } from 'rxjs';
 import { ModalController } from '@ionic/angular';
-import { AlcoholicModalComponent } from './alcoholic-modal/alcoholic-modal.component';
+import { IngredientModalComponent } from '../ingredient-modal/ingredient-modal.component';
+import { IconDefinition } from '@fortawesome/pro-light-svg-icons';
 
 @Component({
-  selector: 'booziir-alcoholic-ingredients',
-  templateUrl: './alcoholic-ingredients.component.html',
-  styleUrls: ['./alcoholic-ingredients.component.css'],
+  selector: 'booziir-ingredients-list-container',
+  templateUrl: './ingredients-list-container.component.html',
+  styleUrls: ['./ingredients-list-container.component.css'],
 })
-export class AlcoholicIngredientsComponent implements OnInit {
+export class IngredientsListContainerComponent implements OnInit {
+
+  @Input() title: string;
+  @Input() icon: IconDefinition;
 
   alcoholics$: Observable<Ingredient[]>;
 
@@ -27,7 +31,7 @@ export class AlcoholicIngredientsComponent implements OnInit {
 
   async openModal(ingredient?: Ingredient): Promise<void> {
     const modal = await this.modalCtrl.create({
-      component: AlcoholicModalComponent,
+      component: IngredientModalComponent,
       componentProps: {
         alcoholic: ingredient
       }

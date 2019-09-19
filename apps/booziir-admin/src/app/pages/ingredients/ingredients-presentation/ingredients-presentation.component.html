@@ -1,15 +1,18 @@
 <ion-grid>
   <ion-row>
     <ion-col size-xs="12" size-lg>
-      <booziir-alcoholic-ingredients></booziir-alcoholic-ingredients>
+      <booziir-ingredients-list-container [title]="'ALCOHOLICS' | translate" [icon]="faWineBottle">
+      </booziir-ingredients-list-container>
     </ion-col>
 
     <ion-col size-xs="12" size-lg>
-      <booziir-non-alcoholic-ingredients></booziir-non-alcoholic-ingredients>
+      <booziir-ingredients-list-container [title]="'NON-ALCOHOLICS' | translate" [icon]="faGlass">
+      </booziir-ingredients-list-container>
     </ion-col>
 
     <ion-col size-xs="12" size-lg>
-      <booziir-non-liquid-ingredients></booziir-non-liquid-ingredients>
+      <booziir-ingredients-list-container [title]="'NON-LIQUIDS' | translate" [icon]="faLemon">
+      </booziir-ingredients-list-container>
     </ion-col>
   </ion-row>
 </ion-grid>

@@ -1,6 +1,0 @@
-<ion-list>
-  <booziir-ingredient-list-header [headerTitle]="'NON-ALCOHOLICS' | translate" [icon]="faGlass"
-    (addIngredient)="addNonAlcoholic.emit()">
-  </booziir-ingredient-list-header>
-  <ion-item *ngFor="let ingredient of nonAlcoholics">{{ ingredient.name }}</ion-item>
-</ion-list>

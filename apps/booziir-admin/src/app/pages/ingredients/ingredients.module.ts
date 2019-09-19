@@ -11,10 +11,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { i18nPath } from '@booziir/shared';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { SharedModule, HeaderModule } from '@booziir/shared-modules';
+import { IngredientsListContainerModule } from './ingredients-list-container/ingredients-list-container.module';
 import { IngredientsPresentationComponent } from './ingredients-presentation/ingredients-presentation.component';
-import { AlcoholicIngredientsModule } from './alcoholic-ingredients/alcoholic-ingredients.module';
-import { NonAlcoholicIngredientsModule } from './non-alcoholic-ingredients/non-alcoholic-ingredients.module';
-import { NonLiquidIngredientsModule } from './non-liquid-ingredients/non-liquid-ingredients.module';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -31,7 +29,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
     SharedModule,
@@ -44,9 +41,7 @@ const routes: Routes = [
       },
       isolate: true
     }),
-    AlcoholicIngredientsModule,
-    NonAlcoholicIngredientsModule,
-    NonLiquidIngredientsModule
+    IngredientsListContainerModule
   ],
   declarations: [
     IngredientsPage,
