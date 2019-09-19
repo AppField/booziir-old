@@ -1,17 +1,20 @@
 <ion-grid>
   <ion-row>
     <ion-col size-xs="12" size-lg>
-      <booziir-ingredients-list-container [title]="'ALCOHOLICS' | translate" [icon]="faWineBottle">
+      <booziir-ingredients-list-container [title]="'ALCOHOLICS' | translate" [icon]="alcoholIcon"
+        [service]="alcoholicsService">
       </booziir-ingredients-list-container>
     </ion-col>
 
     <ion-col size-xs="12" size-lg>
-      <booziir-ingredients-list-container [title]="'NON-ALCOHOLICS' | translate" [icon]="faGlass">
+      <booziir-ingredients-list-container [title]="'NON-ALCOHOLICS' | translate" [icon]="nonAlcoholIcon"
+        [service]="nonAlcoholicsService">
       </booziir-ingredients-list-container>
     </ion-col>
 
     <ion-col size-xs="12" size-lg>
-      <booziir-ingredients-list-container [title]="'NON-LIQUIDS' | translate" [icon]="faLemon">
+      <booziir-ingredients-list-container [title]="'NON-LIQUIDS' | translate" [icon]="nonLiquidIcon"
+        [service]="nonLiquidsService">
       </booziir-ingredients-list-container>
     </ion-col>
   </ion-row>

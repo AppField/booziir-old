@@ -1,2 +1,3 @@
-<booziir-ingredients-list-presentation [title]="title" [icon]="icon" (addAlcoholic)="openModal()" (editAlcoholic)="openModal($event)">
+<booziir-ingredients-list-presentation [title]="title" [icon]="icon" [ingredients]="ingredients$ | async"
+    (addIngredient)="openModal()" (editIngredients)="openModal($event)">
 </booziir-ingredients-list-presentation>

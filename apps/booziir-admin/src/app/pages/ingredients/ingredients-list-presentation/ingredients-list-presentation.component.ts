@@ -12,10 +12,10 @@ export class IngredientsListPresentationComponent {
 
   @Input() title: string;
   @Input() icon: IconDefinition;
-  @Input() alcoholics: Ingredient[];
+  @Input() ingredients: Ingredient[];
 
-  @Output() addAlcoholic: EventEmitter<void> = new EventEmitter();
-  @Output() editAlcoholic: EventEmitter<Ingredient> = new EventEmitter();
+  @Output() addIngredient: EventEmitter<void> = new EventEmitter();
+  @Output() editIngredients: EventEmitter<Ingredient> = new EventEmitter();
 
   constructor() { }
 

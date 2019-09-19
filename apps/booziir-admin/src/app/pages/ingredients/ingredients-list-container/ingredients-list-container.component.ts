@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { LiquidIngredient, Ingredient } from '@booziir/shared';
-import { IngredientsAlcoholicService } from '../../../services/ingredients-alcoholic/ingredients-alcoholic.service';
+import { Ingredient } from '@booziir/shared';
 import { Observable } from 'rxjs';
 import { ModalController } from '@ionic/angular';
 import { IngredientModalComponent } from '../ingredient-modal/ingredient-modal.component';
 import { IconDefinition } from '@fortawesome/pro-light-svg-icons';
+import { IFirestoreService } from '@booziir/shared-services';
 
 @Component({
   selector: 'booziir-ingredients-list-container',
@@ -15,19 +15,18 @@ export class IngredientsListContainerComponent implements OnInit {
 
   @Input() title: string;
   @Input() icon: IconDefinition;
+  @Input() service: IFirestoreService<Ingredient>;
 
-  alcoholics$: Observable<Ingredient[]>;
+  ingredients$: Observable<Ingredient[]>;
 
   constructor(
-    private readonly alcoholicsService: IngredientsAlcoholicService,
     private readonly modalCtrl: ModalController
   ) {
-    this.alcoholics$ = this.alcoholicsService.items$;
   }
 
   ngOnInit() {
+    this.ingredients$ = this.service.items$;
   }
-
 
   async openModal(ingredient?: Ingredient): Promise<void> {
     const modal = await this.modalCtrl.create({
@@ -42,20 +41,20 @@ export class IngredientsListContainerComponent implements OnInit {
         if (result.role === 'save') {
           const data = result.data as Ingredient
           if (!data.id) {
-            this.alcoholicsService.addItem(new LiquidIngredient(null, data.name, data.available));
+            this.service.addItem(new Ingredient(null, data.name, data.available));
           } else if (data) {
-            this.alcoholicsService.updateItem(data);
+            this.service.updateItem(data);
           }
         } else if (result.role === 'delete') {
-          this.deleteAlcoholic(result.data);
+          this.deleteIngredient(result.data);
         }
       });
 
     modal.present();
   }
 
-  private deleteAlcoholic(ingredient: Ingredient): void {
-    this.alcoholicsService.deleteItem(ingredient);
+  private deleteIngredient(ingredient: Ingredient): void {
+    this.service.deleteItem(ingredient);
   }
 
 }

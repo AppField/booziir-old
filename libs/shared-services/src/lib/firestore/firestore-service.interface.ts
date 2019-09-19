@@ -1,8 +1,16 @@
 import { BaseItem } from '@booziir/shared';
-import { CollectionReference, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { Ingredient } from '@booziir/shared';
 
 
 export interface IFirestoreService<Item extends BaseItem> {
+
+    collectionPath: string;
+
+    collection: AngularFirestoreCollection<Ingredient>;
+
+    items$: Observable<Ingredient[]>;
 
     setupCollection(collectionPath: string): void
 

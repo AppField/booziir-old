@@ -4,7 +4,7 @@ export class Ingredient extends BaseItem {
     name: string;
     available: boolean;
 
-    constructor(id: string, name: string, available = true, updatedAt: Date, createdAt: Date) {
+    constructor(id: string, name: string, available = true, updatedAt?: Date, createdAt?: Date) {
         super(id, updatedAt, createdAt);
 
         this.name = name || null;
