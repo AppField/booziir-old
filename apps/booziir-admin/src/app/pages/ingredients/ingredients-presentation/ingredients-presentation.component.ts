@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { faWineBottle, faGlass, faLemon, faLeaf, faSeedling } from '@fortawesome/pro-light-svg-icons';
+import { faWineBottle, faGlass, faSeedling } from '@fortawesome/pro-light-svg-icons';
 import { IngredientsAlcoholicService } from '../../../services/ingredients-alcoholic/ingredients-alcoholic.service';
 import { IngredientsNonAlcoholicService } from '../../../services/ingredients-non-alcoholic/ingredients-non-alcoholic.service';
 import { IngredientsNonLiquidService } from '../../../services/ingredients-non-liquid/ingredients-non-liquid.service';
