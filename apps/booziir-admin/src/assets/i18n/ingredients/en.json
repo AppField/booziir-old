@@ -15,9 +15,9 @@
     "AT-WILL": "At will"
   },
   "MODALS": {
-    "ALCOHOLIC": {
-      "ADD": "Add Alcoholic",
-      "EDIT": "Edit Alcoholic"
+    "INGREDIENTS": {
+      "ADD": "Add Ingredient",
+      "EDIT": "Edit Ingredient"
     },
     "LABELS": {
       "NAME": "Name",

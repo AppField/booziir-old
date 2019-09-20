@@ -18,7 +18,7 @@ export class IngredientModalComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    private readonly modalCtrl: ModalController,
+    private readonly modalController: ModalController,
     private readonly fb: FormBuilder,
     private readonly translate: TranslateService
   ) {
@@ -26,8 +26,8 @@ export class IngredientModalComponent implements OnInit {
 
   ngOnInit() {
     this.title = this.alcoholic && this.alcoholic.id
-      ? this.translate.instant('MODALS.ALCOHOLIC.EDIT')
-      : this.translate.instant('MODALS.ALCOHOLIC.ADD');
+      ? this.translate.instant('MODALS.INGREDIENTS.EDIT')
+      : this.translate.instant('MODALS.INGREDIENTS.ADD');
 
     this.buildForm(this.alcoholic);
   }
@@ -42,11 +42,11 @@ export class IngredientModalComponent implements OnInit {
   }
 
   cancel(): void {
-    this.modalCtrl.dismiss();
+    this.modalController.dismiss();
   }
 
   delete(ingredient: Ingredient): void {
-    this.modalCtrl.dismiss(ingredient, 'delete');
+    this.modalController.dismiss(ingredient, 'delete');
   }
 
   save(): void {
@@ -54,7 +54,7 @@ export class IngredientModalComponent implements OnInit {
     if (this.form.valid) {
       const value = this.form.value;
       const alcoholic = { ... this.alcoholic, name: value.name, available: value.available };
-      this.modalCtrl.dismiss(alcoholic, 'save');
+      this.modalController.dismiss(alcoholic, 'save');
     }
   }
 

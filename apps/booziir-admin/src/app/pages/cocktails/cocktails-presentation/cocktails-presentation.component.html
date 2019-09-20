@@ -1,7 +1,7 @@
 <ion-list>
   <ion-list-header>
     <ion-label>{{ 'RECIPES' | translate }}</ion-label>
-    <ion-button fill="clear" color="primary">
+    <ion-button fill="clear" color="primary" (click)="addCocktail.emit()">
       <fa-icon [icon]="faPlus" size="2x"></fa-icon>
     </ion-button>
   </ion-list-header>

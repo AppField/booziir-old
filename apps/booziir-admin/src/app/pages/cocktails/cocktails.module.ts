@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
@@ -13,6 +13,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { SharedModule, HeaderModule } from '@booziir/shared-modules';
 import { CocktailsPresentationComponent } from './cocktails-presentation/cocktails-presentation.component';
 import { CocktailItemComponent } from './cocktail-item/cocktail-item.component';
+import { CocktailModalComponent } from './cocktail-modal/cocktail-modal.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -30,6 +31,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes),
     SharedModule,
@@ -43,6 +45,11 @@ const routes: Routes = [
       isolate: true
     })
   ],
-  declarations: [CocktailsPage, CocktailsPresentationComponent, CocktailItemComponent]
+  entryComponents: [CocktailModalComponent],
+  declarations: [
+    CocktailsPage,
+    CocktailsPresentationComponent,
+    CocktailItemComponent,
+    CocktailModalComponent]
 })
 export class CocktailsPageModule { }

@@ -12,7 +12,8 @@ export class CocktailsPresentationComponent implements OnInit {
   faPlus = faPlus;
 
   @Input() cocktails: Cocktail[];
-  @Output() cocktailEdit: EventEmitter<string> = new EventEmitter<string>();
+  @Output() addCocktail: EventEmitter<void> = new EventEmitter<void>();
+  @Output() editCocktail: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 

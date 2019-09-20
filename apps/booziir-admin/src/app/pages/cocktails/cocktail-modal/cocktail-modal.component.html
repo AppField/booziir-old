@@ -1,0 +1,45 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">{{ 'MODALS.LABELS.NAME' | translate }}</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+      <div class="error-message" *ngIf="errorRequired('name')" [@expandCollapse]>
+        {{ 'MODALS.ERRORS.REQUIRED' | translate }}</div>
+
+      <ion-list-header>
+        <ion-label>Zutaten</ion-label>
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Pac man</ion-label>
+      </ion-item>
+    </ion-list>
+
+  </form>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="danger" *ngIf="cocktail?.id" (click)="delete(cocktail)">
+        {{ 'MODALS.DELETE' | translate }}
+      </ion-button>
+      <ion-button (click)="cancel()" slot="start">{{ 'MODALS.CANCEL' | translate }}</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button color="primary" fill="solid" (click)="save()">{{ 'MODALS.SAVE' | translate }}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

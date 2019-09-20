@@ -1,5 +1,20 @@
 {
   "TITLE": "Cocktails",
   "RECIPES": "Recipes",
-  "SETTINGS": "Settings"
+  "SETTINGS": "Settings",
+  "MODALS": {
+    "ALCOHOLIC": {
+      "ADD": "Add Cocktail",
+      "EDIT": "Edit Cocktail"
+    },
+    "LABELS": {
+      "NAME": "Name"
+    },
+    "ERRORS": {
+      "REQUIRED": "Required"
+    },
+    "DELETE": "Delete",
+    "CANCEL": "Cancel",
+    "SAVE": "Save"
+  }
 }

@@ -1,5 +1,5 @@
 <booziir-header [title]="'TITLE' | translate"></booziir-header>
 
 <ion-content>
-  <booziir-cocktails-presentation></booziir-cocktails-presentation>
+  <booziir-cocktails-presentation (addCocktail)="openModal()" (editCocktail)="openModal($event)"></booziir-cocktails-presentation>
 </ion-content>
